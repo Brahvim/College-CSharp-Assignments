@@ -1,6 +1,5 @@
 ﻿Console.Write("Please enter a character to check if it is a vowel: ");
-
-switch ((char)Console.Read())
+switch (Console.Read())
 {
 	case 'a':
 	case 'e':

@@ -3,4 +3,4 @@ Console.WriteLine(
 	char.IsUpper((char)Console.Read())
 	? "That is an uppercase character."
 	: "That is NOT an uppercase character!"
-	);
+);

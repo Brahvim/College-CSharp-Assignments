@@ -35,21 +35,19 @@
             // 
             textBox1.Font = new Font("Segoe UI", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(2, 0);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(311, 58);
+            textBox1.Size = new Size(355, 70);
             textBox1.TabIndex = 0;
             textBox1.KeyDown += TextBox1_KeyDown;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(313, 58);
+            ClientSize = new Size(358, 77);
             Controls.Add(textBox1);
-            Margin = new Padding(3, 2, 3, 2);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Calculator";
+            Text = "Calculator";
             ResumeLayout(false);
             PerformLayout();
         }

@@ -1,7 +1,5 @@
 namespace Practical5
 {
-    // These things need to get finished. I give up on styling my code.
-    // At this point, it's all about finding the fastest way to the end.
     public partial class Form1 : Form
     {
         static readonly char[] operations = ['+', '-', '*', '/'];
@@ -14,9 +12,9 @@ namespace Practical5
             this.InitializeComponent();
         }
 
-        private void TextBox1_KeyDown(object sender, KeyEventArgs e)
+        private void TextBox1_KeyDown(object p_sender, KeyEventArgs p_event)
         {
-            switch (e.KeyCode)
+            switch (p_event.KeyCode)
             {
                 case Keys.Escape:
                     if (this.historyExprs.Count != 0)

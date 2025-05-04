@@ -1,23 +1,19 @@
-﻿using MySql.Data.MySqlClient;
-using Microsoft.Extensions.Configuration;
-
-var config = new ConfigurationBuilder().AddUserSecrets<AssemblyId>().Build();
-
-Console.WriteLine(config["dbPass"]);
-using (
-    // `new()` is lovely but `var` is great, too!:
-    var connection = new MySqlConnection(string.Concat([
-
-        "User ID=root;",
-        "Server=localhost;",
-        $"Password={config["dbPass"]};", // VS2022 stores this. Can chill.
-        // (Right-click `Practical8`, click "Manage User Secrets". NuGet needed I think).
-
-])) // Passing a collection. Can use as many commas as I want!
-    ) // End of `using()`.
+﻿// VERY compact program!
+using MySql.Data.MySqlClient;
+string pass = "";
+try
 {
-    int rows = new MySqlCommand(File.ReadAllText(".\\Sql.sql"), connection).ExecuteNonQuery();
-    Console.WriteLine($"{rows} rows affected by all transactions done by the loaded script.");
+    pass = File.ReadAllText(".\\password.txt");
+    Console.WriteLine($"`password.txt` said, `{pass}`!");
 }
-
-class AssemblyId { }; // Fake class to identify this assembly and fetch config stuff.
+catch (FileNotFoundException)
+{
+    Console.WriteLine("Please make a `password.txt`!");
+}
+// `new()` is lovely but `var` is great, too!:
+var connection = new MySqlConnection($"User ID=root;Server=localhost;Password={pass};");
+connection.Open();
+Console.WriteLine($"Connection status: `{connection.State}`.");
+int rows = new MySqlCommand(File.ReadAllText(".\\Sql.sql"), connection).ExecuteNonQuery();
+Console.WriteLine($"{rows} rows affected by all transactions done by the loaded script.");
+connection.Close(); // Saved *a lot of lines* not using `using() {}`!

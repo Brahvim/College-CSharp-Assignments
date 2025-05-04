@@ -79,6 +79,7 @@
             Controls.Add(labelMonth);
             Controls.Add(labelDay);
             Controls.Add(dateTimePicker1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             Text = "Dates";
             ResumeLayout(false);

@@ -46,7 +46,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(358, 77);
             Controls.Add(textBox1);
-            Name = "Calculator";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "Form1";
             Text = "Calculator";
             ResumeLayout(false);
             PerformLayout();

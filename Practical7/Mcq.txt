@@ -1,0 +1,81 @@
+# Comments look like this!
+
+# The format is:
+# Question,
+# Correct answer number,
+# Answer 1,
+# Answer 2,
+# Answer 3,
+# Answer 4.
+
+# Feel free to leave comments or empty lines as you wish!
+
+What does 'var' do in C#?
+2
+Throws a runtime error
+Infers the type at compile-time
+Creates a dynamic type
+Declares a nullable variable
+
+Which one is NOT a valid access modifier in C#?
+4
+public
+private
+internal
+exposed
+
+Which keyword is used to define an interface?
+1
+interface
+abstract
+contract
+define
+
+Which of these is a reference type?
+3
+int
+bool
+string
+char
+
+What's the name of C#'s base object type?
+1
+object
+System
+base
+super
+
+Which event pattern is standard in C#?
+2
+ObserverableEvent
+EventHandler
+NotifyAction
+OnEventTrigger
+
+How do you write a property in C#?
+3
+def property {}
+let property {}
+{ get; set; }
+function get() {}
+
+Which tool compiles C# code?
+2
+MSBuildinator9000
+Roslyn
+MonoMelt
+VisualParse++
+
+Which of the following is a *value type*?
+4
+StringBuilder
+Exception
+object
+float
+
+What's the default access modifier for class members?
+3
+public
+internal
+private
+protected

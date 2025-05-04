@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS db_cs_p8;
+DROP DATABASE IF EXISTS db_dotnet_practicals;
 
 -- `CREATE`...:
-CREATE DATABASE db_cs_p8;
-USE db_cs_p8;
+CREATE DATABASE db_dotnet_practicals;
+USE db_dotnet_practicals;
 
 CREATE TABLE students(
 	roll INT PRIMARY KEY,

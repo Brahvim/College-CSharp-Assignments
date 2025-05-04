@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            label1 = new Label();
+            labelConnectivity = new Label();
             buttonConfig = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -43,19 +43,18 @@
             dataGridView1.Size = new Size(637, 450);
             dataGridView1.TabIndex = 0;
             // 
-            // label1
+            // labelConnectivity
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(659, 21);
-            label1.Name = "label1";
-            label1.Size = new Size(112, 20);
-            label1.TabIndex = 1;
-            label1.Text = "No Connection!";
+            labelConnectivity.AutoSize = true;
+            labelConnectivity.Location = new Point(659, 21);
+            labelConnectivity.Name = "labelConnectivity";
+            labelConnectivity.Size = new Size(0, 20);
+            labelConnectivity.TabIndex = 1;
             // 
-            // button1
+            // buttonConfig
             // 
             buttonConfig.Location = new Point(643, 44);
-            buttonConfig.Name = "button1";
+            buttonConfig.Name = "buttonConfig";
             buttonConfig.Size = new Size(145, 29);
             buttonConfig.TabIndex = 2;
             buttonConfig.Text = "Open Config...";
@@ -68,8 +67,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(buttonConfig);
-            Controls.Add(label1);
+            Controls.Add(labelConnectivity);
             Controls.Add(dataGridView1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -80,7 +80,7 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private Label labelConnectivity;
         private Button buttonConfig;
-        private Label label1;
     }
 }

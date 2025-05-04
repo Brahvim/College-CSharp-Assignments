@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS db_cs_p8;
+USE db_cs_p8;
+
+CREATE TABLE IF NOT EXISTS students(
+	roll INT PRIMARY KEY,
+	name TEXT NOT NULL,
+	bday TIMESTAMP NOT NULL,
+);
+
+INSERT 
+
+SELECT * FROM students;

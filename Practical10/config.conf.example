@@ -1,0 +1,8 @@
+# Do set YOUR config file's Visual Studio *Properties* like this:  
+# `Advanced`,  
+#	> `Copy To Output Directory`,  
+#		> `Copy if newer`!  
+
+host=localhost
+user=root
+pass=123

@@ -2,4 +2,4 @@ bin/
 obj/
 /.vs
 password.txt
-/Practical10/config.conf
+config.conf

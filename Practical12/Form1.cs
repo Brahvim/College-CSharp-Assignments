@@ -1,13 +1,10 @@
 using System.Data;
-using System.Net.WebSockets;
-using System.Text;
-using System.Xml;
 
 namespace Practical12
 {
     public partial class FormXmlReader : Form
     {
-        public DataSet xmlDataSet = new();
+        public readonly DataSet xmlDataSet = new();
 
         public FormXmlReader()
         {
@@ -26,28 +23,24 @@ namespace Practical12
 
         private void ButtonSave_Click(object? p_sender, EventArgs p_event)
         {
-            var dialog = new SaveFileDialog();
-
-            dialog.Title = "Save XML";
-            dialog.FileName = "New.xml";
-            dialog.Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*";
+            var dialog = new SaveFileDialog
+            {
+                FileName = "New",
+                Title = "Save XML",
+                Filter = "XML files (*.xml)|*.xml|All files (*.*)|*.*"
+            };
 
             var result = dialog.ShowDialog();
 
             if (result == DialogResult.OK)
             {
-                this.xmlDataSet.WriteXml(dialog.FileName, XmlWriteMode.IgnoreSchema);
+                this.xmlDataSet.WriteXml(dialog.FileName);
             }
         }
 
         private void ButtonClear_Click(object? p_sender, EventArgs p_event)
         {
-            //this.xmlDataSet = new();
-            //this.xmlDataSet.Clear();
             this.xmlDataSet.Reset();
-            //this.xmlDataSet.Tables.Clear();
-            this.xmlDataSet.DataSetName = "";
-            //this.dataGridView.DataSource = new();
         }
 
         protected override bool ProcessCmdKey(ref Message p_msg, Keys p_keys)
@@ -82,8 +75,8 @@ namespace Practical12
                     catch (Exception)
                     {
                         MessageBox.Show(
-                            $"`{Path.GetFileName(p)}` may not have XML content or be invalid.",
-                            "Parsing Error!",
+                            $"`{Path.GetFileName(p)}` does not have valid XML.",
+                            "Reading Error!",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error
                         );

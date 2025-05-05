@@ -2,13 +2,13 @@
 <students>
 	<student>
 		<roll>1</roll>
-		<branch>4</branch>
+		<branch>EE</branch>
 		<bday>2005-03-10</bday>
 		<name>Anuj Kukreti</name>
 	</student>
 	<student>
 		<roll>2</roll>
-		<branch>5</branch>
+		<branch>CS</branch>
 		<bday>2006-06-02</bday>
 		<name>Brahvim Bhaktvatsal</name>
 	</student>

@@ -282,7 +282,7 @@
                     File.WriteAllText(this.fileNameOpenedFile, this.TextBox_GetSerializableText());
                     succeeded = true;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     if (DialogResult.Cancel == MessageBox.Show(
                         "FAILED to save! Try again?",

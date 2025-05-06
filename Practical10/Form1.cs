@@ -6,11 +6,9 @@ namespace Practical10
 {
     public partial class Form1 : Form
     {
-        readonly static string textConnnectionNone = "No Connection!";
-        readonly static string textConnnectionOk = "Connected.";
         readonly static string configPath = ".\\config.conf";
 
-        private Dictionary<string, string> config;
+        private readonly Dictionary<string, string> config;
 
         public Form1()
         {
@@ -33,19 +31,25 @@ namespace Practical10
                 p_elementSelector => p_elementSelector.Value // "every single key."
             );
 
-            using (var connection = new MySqlConnection(
-                $"User ID=root;Server=localhost;Password={this.config["pass"]};"))
-            {
-                this.labelConnectivity.Text = Form1.textConnnectionOk;
+            // Using `using` like this grants access till the end of the current block:
+            using var connection = new MySqlConnection(string.Concat([
+                $"Server={this.config["host"]};",
+                $"User ID={this.config["user"]};",
+                $"Password={this.config["pass"]};",
+            ]));
 
-                using (var adapter = new MySqlDataAdapter(File.ReadAllText(".\\Sql\\Create.sql"), connection))
-                {
-                    var table = new DataTable();
-                    adapter.Fill(table);
+            using var adapter = new MySqlDataAdapter(File.ReadAllText(".\\Sql\\Create.sql"), connection);
+            var table = new DataTable();
+            adapter.Fill(table);
 
-                    this.dataGridView1.DataSource = table;
-                }
-            }
+            this.dataGridView.DataSource = table;
+            this.dataGridView.AllowUserToResizeRows = true;
+            this.dataGridView.AllowUserToResizeColumns = true;
+
+            // Specified in Designer:
+            //this.dataGridView.AllowUserToAddRows = false;
+            //this.dataGridView.AllowUserToDeleteRows = false;
+            //this.dataGridView.AllowUserToOrderColumns = false;
         }
 
         private void ButtonConfig_Click(object? p_sender, EventArgs p_args)

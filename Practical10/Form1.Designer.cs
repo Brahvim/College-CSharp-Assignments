@@ -28,59 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            labelConnectivity = new Label();
-            buttonConfig = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dataGridView = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(0, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(637, 450);
-            dataGridView1.TabIndex = 0;
-            // 
-            // labelConnectivity
-            // 
-            labelConnectivity.AutoSize = true;
-            labelConnectivity.Location = new Point(659, 21);
-            labelConnectivity.Name = "labelConnectivity";
-            labelConnectivity.Size = new Size(0, 20);
-            labelConnectivity.TabIndex = 1;
-            // 
-            // buttonConfig
-            // 
-            buttonConfig.Location = new Point(643, 44);
-            buttonConfig.Name = "buttonConfig";
-            buttonConfig.Size = new Size(145, 29);
-            buttonConfig.TabIndex = 2;
-            buttonConfig.Text = "Open Config...";
-            buttonConfig.UseVisualStyleBackColor = true;
-            buttonConfig.Click += ButtonConfig_Click;
+            dataGridView.AllowUserToAddRows = false;
+            dataGridView.AllowUserToDeleteRows = false;
+            dataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView.Location = new Point(0, 0);
+            dataGridView.Name = "dataGridView1";
+            dataGridView.RowHeadersWidth = 51;
+            dataGridView.Size = new Size(801, 450);
+            dataGridView.TabIndex = 0;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(buttonConfig);
-            Controls.Add(labelConnectivity);
-            Controls.Add(dataGridView1);
+            Controls.Add(dataGridView);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private Label labelConnectivity;
-        private Button buttonConfig;
+        private DataGridView dataGridView;
     }
 }

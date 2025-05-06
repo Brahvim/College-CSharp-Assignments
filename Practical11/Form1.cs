@@ -78,7 +78,12 @@ namespace Practical10
             this.adapter.UpdateCommand = builder.GetUpdateCommand();
 
             this.adapter.Fill(this.table = new());
-            this.table.PrimaryKey = [this.table?.Columns?["roll"]];
+
+            //if (this != null && this.table != null && this.table.Columns != null && this.table.Columns.Contains("roll"))
+            //{
+            this.table.PrimaryKey = [this.table?.Columns?["roll"] ?? new()];
+            //}
+
             this.dataGridView.DataSource = table;
 
             //Debug.WriteLine(this.adapter.DeleteCommand.CommandText);
@@ -113,7 +118,9 @@ namespace Practical10
                 //if (this.table is null)
                 //    this.table = new();
 
+#pragma warning disable CS8604
                 this.adapter?.Update(this.table);
+#pragma warning restore CS8604
                 this.ChangesFlagEnsureFolded();
             }
             catch (Exception e)

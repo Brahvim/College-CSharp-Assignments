@@ -13,9 +13,9 @@ namespace Practical6
         private void UpdateDateLabels()
         {
             int chars;
-            Span<char> span = stackalloc char[4];
+            Span<char> span = stackalloc char[16];
 
-            dateTimePicker1.Value.TryFormat(span, out chars, "dd");
+            dateTimePicker1.Value.TryFormat(span, out chars, "dddd");
             labelDay.Text = string.Format("Day: {0}", span.Slice(0, chars).ToString());
 
             dateTimePicker1.Value.TryFormat(span, out chars, "yyyy");
